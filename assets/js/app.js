@@ -5,10 +5,18 @@ function contar() {
 
         if(longitud <= max) { 
              document.getElementById("contador").value = max-longitud; 
-        } else { 
-             document.getElementById("new-twt-content").value = cadena.substr(0, max);
-        } 
-} 
+        } else if (longitud > 0) { //cuando el contador llegue a 0 (puesto que empieza en 140 hacia atrás)
+            document.getElementById("contador").value = "-" + (longitud - max); //agregará un - más la longitud del texto a la cual se le restan los 140 caracteres
+            document.getElementById("twt-btn").disabled = true;
+        };
+
+       if (longitud > 130) {
+            document.getElementById("contador").style.color = "red";
+        } else if (longitud > 120) {
+            document.getElementById("contador").style.color = "orange";
+        }
+
+};
 
 
 function add() {
@@ -33,9 +41,9 @@ function add() {
     timeLine.insertBefore(newTwt, timeLine.children[0]);
 };
 
-var disabledBtn = document.getElementById("twt-btn").disabled = true;
+//var disabledBtn = document.getElementById("twt-btn").disabled = true;
 
-function enableBtn() {
-   var blueBtn = document.getElementById("twt-btn").removeAttribute("disabled");  
-}
+//function enableBtn() {
+  // var blueBtn = document.getElementById("twt-btn").removeAttribute("disabled");  
+//}
 
