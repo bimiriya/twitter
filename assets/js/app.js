@@ -8,7 +8,8 @@ function contar() {
         } else { 
              document.getElementById("new-twt-content").value = cadena.substr(0, max);
         } 
-};
+} 
+
 
 function add() {
     var twtNewContent = document.getElementById("new-twt-content");
@@ -18,13 +19,16 @@ function add() {
     var newTwt = document.createElement("div");
     var newContent = document.createElement("p");
     var dateSpan = document.createElement("span");
+    var getHours = new Date().getHours();
+    var getMinutes = new Date().getMinutes();
+    var getDate = getHours + ":" + getMinutes;
 
     newTwt.className = "new-twt";
     
     timeLine.appendChild(newTwt)
     newTwt.appendChild(newContent);
-    newTwt.appendChild(dateSpan)
-    dateSpan.textContent = new Date();
+    newTwt.appendChild(dateSpan);
+    dateSpan.textContent = getDate;
     newContent.textContent = twtNewContent.value;
     timeLine.insertBefore(newTwt, timeLine.children[0]);
 };
