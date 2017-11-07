@@ -24,6 +24,7 @@ body {
     background-image: url(../img/bg.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 600px;
 }
 
 #html-boxes {
@@ -75,7 +76,7 @@ form {
 }
 
 #twt-btn {
-    display: block;
+    display: inline-block;
     border: none;
     outline: none;
     padding: 15px 30px;
@@ -84,6 +85,13 @@ form {
     color: grey;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.tweet-box input {
+    border: none;
+    background: none;
+    font-size: 17px;
+    padding-left: 68%;
 }
 /*---------under-nav end---------*/
 

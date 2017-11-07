@@ -23,10 +23,11 @@
 
         <div class="tweet-box">
            <form>
-            <textarea id="new-twt-content" cols="50" rows="3" 
+            <textarea id="new-twt-content" onKeyDown="contar()" onkeypress="enableBtn()" cols="50" rows="3" 
             placeholder="What's on your mind?"></textarea>
             <button type="button" id="twt-btn" onclick="add ()">TWEET</button>
-           </form>
+            <input disabled size="3" value="140" id="contador"> 
+        </form>
         </div>
         </div>
 
