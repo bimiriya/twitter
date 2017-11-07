@@ -1,0 +1,109 @@
+body {
+    margin: 0 auto;
+    font-family: 'Belgrano', serif;
+}
+
+/*---------home start---------*/
+#home {
+    text-align: center;
+}
+
+#home a {
+    display: inline-block;
+    background: rgb(102, 204, 218);
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    line-height: 2;
+    font-size: 30px;
+}
+/*---------home end---------*/
+
+/*---------under-nav start---------*/
+#under-nav {
+    background-image: url(../img/bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#html-boxes {
+    text-align: center;
+    margin: 0 5%;
+    padding-top: 15px;
+}
+
+#html-boxes * {
+    margin: 0;
+}
+
+.profile-box, .tweet-box {
+    vertical-align: text-top;
+    display: inline-block;
+    margin: 0 10px!important;
+    width: 500px;
+    text-align: left;
+    padding-left: 15px;
+    background: white;
+    border-radius: 5px;
+}
+
+.profile-box {
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.profile-box * {
+    line-height: 3;
+}
+
+.profile-box h6 {
+    color: rgb(81, 148, 211);
+    border-top: 1px solid rgb(206, 206, 206);
+}
+
+form {
+    padding-top: 20px;
+}
+
+.tweet-box textarea {
+    width: 99%;
+    border: none;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    outline:none;
+    font-size: 20px;
+    resize: none;
+}
+
+#twt-btn {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-family: 'Belgrano', serif;
+    color: grey;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*---------under-nav end---------*/
+
+
+/*---------timeline start---------*/
+#timeline {
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 10%;
+    padding-bottom: 20px;
+}
+
+/*dom elements*/
+.new-twt {
+    text-align: left;
+    padding-left: 10px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+
+/*---------timeline end---------*/
