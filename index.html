@@ -21,20 +21,18 @@
             <h6>BOTTOM TEXT</h6>
         </aside>
 
-        <div class="tweet-box">
-           <form>
-            <textarea id="new-twt-content" onKeyDown="contar()" onkeypress="enableBtn()" cols="50" rows="3" 
+        <form class="tweet-box">
+            <textarea id="new-twt-content" oninput="grow()" onkeydown="contar()" onkeypress="enableBtn()" cols="50" rows="3" 
             placeholder="What's on your mind?"></textarea>
             <button type="button" id="twt-btn" onclick="add ()">TWEET</button>
             <input disabled size="3" value="140" id="contador"> 
         </form>
-        </div>
         </div>
 
     <section id="timeline"></section>
 
     </section>
 
-    <script type="application/javascript" src="assets/js/app.js"></script>
+    <script type="application/javascript" src="assets/js/app2.js"></script>
 </body>
 </html>

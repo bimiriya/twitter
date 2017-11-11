@@ -1,3 +1,5 @@
+//función para contar caracteres en reversa 
+//y cambiar el color del contador
 function contar() { 
     var max = "140"; 
     var cadena = document.getElementById("new-twt-content").value; 
@@ -15,10 +17,16 @@ function contar() {
         } else if (longitud > 120) {
             document.getElementById("contador").style.color = "orange";
         }
-
 };
 
+//función para agrandar el height del textarea
+var textarea = document.getElementById("new-twt-content");
 
+textarea.oninput = function() {
+  textarea.style.height = textarea.scrollHeight + "px";
+};
+
+//función para imprimir tweet en el timeline
 function add() {
     var twtNewContent = document.getElementById("new-twt-content");
     var twtBtn = document.getElementById("twt-btn");
@@ -29,21 +37,14 @@ function add() {
     var dateSpan = document.createElement("span");
     var getHours = new Date().getHours();
     var getMinutes = new Date().getMinutes();
-    var getDate = getHours + ":" + getMinutes;
+    var getTime = getHours + ":" + getMinutes;
 
     newTwt.className = "new-twt";
-    
+
     timeLine.appendChild(newTwt)
     newTwt.appendChild(newContent);
     newTwt.appendChild(dateSpan);
-    dateSpan.textContent = getDate;
+    dateSpan.textContent = getTime;
     newContent.textContent = twtNewContent.value;
     timeLine.insertBefore(newTwt, timeLine.children[0]);
 };
-
-//var disabledBtn = document.getElementById("twt-btn").disabled = true;
-
-//function enableBtn() {
-  // var blueBtn = document.getElementById("twt-btn").removeAttribute("disabled");  
-//}
-

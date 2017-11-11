@@ -113,4 +113,9 @@ form {
     border-radius: 5px;
 }
 
+#new-twt-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    min-height: 80px;
+}
 /*---------timeline end---------*/
