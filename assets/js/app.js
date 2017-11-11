@@ -8,7 +8,7 @@ function contar() {
     var cadena = document.getElementById("new-twt-content").value; 
     var longitud = cadena.length; 
 
-        if (longitud >= 1) { //para abilitar botón
+        if (longitud >= 0) { //para abilitar botón
             var blueBtn = document.getElementById("twt-btn").removeAttribute("disabled"); 
             document.getElementById("twt-btn").style.backgroundColor = "rgb(102, 204, 218)";
             document.getElementById("twt-btn").style.color = "white";
