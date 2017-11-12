@@ -1,27 +1,35 @@
-//botón para twitear desabilitado por default
-var disabledBtn = document.getElementById("twt-btn").disabled = true;
+document.getElementById("twt-btn").disabled = true;
+
+function enableBtn() { 
+    var valor = document.getElementById("new-twt-content").value; 
+    var cantidad = valor.length; 
+
+    if (cantidad >= 0 && cantidad < 139) {
+        document.getElementById("twt-btn").disabled = false;
+        document.getElementById("twt-btn").style.backgroundColor = "rgb(102, 204, 218)";
+        document.getElementById("twt-btn").style.color = "white";
+    }
+}
 
 //función para contar caracteres en reversa 
 //y cambiar el color del contador
 function contar() { 
-    var max = "140"; 
+    var max = "139"; 
     var cadena = document.getElementById("new-twt-content").value; 
     var longitud = cadena.length; 
 
-        if (longitud >= 0) { //para abilitar botón
-            var blueBtn = document.getElementById("twt-btn").removeAttribute("disabled"); 
-            document.getElementById("twt-btn").style.backgroundColor = "rgb(102, 204, 218)";
-            document.getElementById("twt-btn").style.color = "white";
-        } else if(longitud <= max) { 
-             document.getElementById("contador").value = max-longitud; 
+        if(longitud <= max) { 
+             document.getElementById("contador").value = max-longitud;
+             document.getElementById("twt-btn").style.backgroundColor = "#dcdcdc";
+             document.getElementById("twt-btn").style.color = "grey"; 
         } else if (longitud > 0) { //cuando el contador llegue a 0 (puesto que empieza en 140 hacia atrás)
             document.getElementById("contador").value = "-" + (longitud - max); //agregará un - más la longitud del texto a la cual se le restan los 140 caracteres
             document.getElementById("twt-btn").disabled = true;
         };
 
-       if (longitud > 130) {
+       if (longitud > 128) {
             document.getElementById("contador").style.color = "red";
-        } else if (longitud > 120) {
+        } else if (longitud > 118) {
             document.getElementById("contador").style.color = "orange";
         }
 };
