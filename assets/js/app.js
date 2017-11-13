@@ -25,22 +25,66 @@ twtBtn.onclick = function() {
         var getHours = new Date().getHours();
         var getMinutes = new Date().getMinutes();
         var getTime = getHours + ":" + getMinutes;
+        var separator = document.createElement("hr");
+
+        var iconDiv = document.createElement("div");
+        var commentIcon = document.createElement("i");
+        var rtIcon = document.createElement("i");
+        var favIcon = document.createElement("i");
+
+        var favIconFull = document.createElement("i");
+
+        //contenido recuperado del h2 en el html
+        var usernameOriginal = document.getElementsByTagName("h2")[0];
+        //contenido clonado
+        var cln = usernameOriginal.cloneNode(true);
     
         //nodos de texto creados
         var newContent = document.createTextNode(valor);
         var contadorContent = document.createTextNode(getTime);
     
-        //atributos
+        //clases
         newTwt.className = "new-twt";
+        commentIcon.classList.add("fa","fa-comment-o");
+        rtIcon.classList.add("fa","fa-retweet");
+        favIcon.classList.add("fa","fa-heart-o");
+
+        favIconFull.classList.add("fa","fa-heart");
+
+        //atributos
+        dateSpan.setAttribute("id","date-span");
+        paragraph.setAttribute("id","paragraph");
+        iconDiv.setAttribute("id","icon-div");
     
         //elementos apendizados
-        timeLine.appendChild(newTwt)
+        timeLine.insertBefore(separator, timeLine.children[0]);
+        timeLine.appendChild(newTwt);
+        newTwt.appendChild(cln);
+        
+        dateSpan.appendChild(contadorContent);
         newTwt.appendChild(newContent);
         newTwt.appendChild(paragraph);
         paragraph.appendChild(newContent);
         newTwt.appendChild(dateSpan);
-        dateSpan.appendChild(contadorContent);
+        newTwt.appendChild(iconDiv);
+        iconDiv.appendChild(commentIcon);
+        iconDiv.appendChild(rtIcon);
+        iconDiv.appendChild(favIcon);
+        iconDiv.appendChild(favIconFull);
+        favIconFull.style.display = "none"
         timeLine.insertBefore(newTwt, timeLine.children[0]);
+
+
+        //funciones para dar fav al tweet
+        favIcon.addEventListener("click",function() {
+            favIcon.style.display = "none";
+            favIconFull.style.display = "initial";
+        })
+
+        favIconFull.addEventListener("click", function() {
+            favIconFull.style.display = "none";
+            favIcon.style.display = "initial";
+        })
     }
 };
 
@@ -81,12 +125,3 @@ textarea.onkeydown = function() {
     }
 };
 
-//DOESNT WORK
-/*
-var c = textarea.value[0];
-textarea.addEventListener("keydown", function(c) {
-    if (event.keyCode == 8) {
-        console.log("funciona");
-    }
-});
-*/

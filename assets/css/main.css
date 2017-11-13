@@ -1,6 +1,6 @@
 body {
     margin: 0 auto;
-    font-family: 'Belgrano', serif;
+    font-family: 'Lato', sans-serif;
 }
 
 /*---------home start---------*/
@@ -30,7 +30,7 @@ body {
 #html-boxes {
     text-align: center;
     margin: 0 5%;
-    padding-top: 15px;
+    padding: 15px;
 }
 
 #html-boxes * {
@@ -49,12 +49,31 @@ body {
 }
 
 .profile-box {
-    padding-top: 10px;
-    padding-bottom: 10px
+    padding: 10px 30px;
 }
 
 .profile-box * {
     line-height: 3;
+}
+
+
+h2::before {
+    content: "";
+    background-image: url(../img/profile-pic.jpg);
+    background-size: 35px 35px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+h2::after {
+    content: "@username";
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.479);
+    margin: 5px;
 }
 
 .profile-box h6 {
@@ -81,7 +100,7 @@ form {
     outline: none;
     padding: 15px 30px;
     margin: 10px 0;
-    font-family: 'Belgrano', serif;
+    font-family: 'Lato', sans-serif;
     color: grey;
     border-radius: 5px;
     cursor: pointer;
@@ -93,6 +112,10 @@ form {
     font-size: 17px;
     padding-left: 68%;
 }
+
+textarea {
+    font-family: 'Lato', sans-serif;
+}
 /*---------under-nav end---------*/
 
 
@@ -100,16 +123,17 @@ form {
 #timeline {
     text-align: center;
     border-radius: 5px;
-    margin: 0 10%;
-    padding-bottom: 20px;
+    margin: 20px 10%;
+    padding: 10px 0 20px;
+    background: white;
 }
 
 /*dom elements*/
 .new-twt {
     text-align: left;
-    padding-left: 10px;
+    padding: 0px 30px;
     background: white;
-    margin-bottom: 20px;
+    margin: 20px 0;
     border-radius: 5px;
 }
 
@@ -117,5 +141,38 @@ form {
     overflow: hidden;
     box-sizing: border-box;
     min-height: 80px;
+}
+
+#username {
+    display: inline-block;
+    margin: 0;
+}
+
+#date-span {
+    display: inline-block;
+    margin: 10px 0 10px 48px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.479);
+}
+
+#paragraph {
+    margin: 0;
+    margin-left: 48px;
+    font-size: 20px
+}
+
+#icon-div {
+    margin-top: 20px;
+    margin-left: 48px;
+}
+
+#icon-div .fa {
+    margin-right: 100px;
+    color: rgba(0, 0, 0, 0.479);
+    cursor: pointer;
+}
+
+#icon-div .fa-heart {
+    color: red;
 }
 /*---------timeline end---------*/
